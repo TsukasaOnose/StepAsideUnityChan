@@ -13,11 +13,10 @@ public class AutoDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(this.gameObject);
+        Vector3 nowPos = GameObject.Find("unitychan").transform.position;
+        if ( this.transform.position.z < nowPos.z - 10)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
